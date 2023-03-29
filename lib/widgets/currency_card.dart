@@ -15,13 +15,13 @@ class CurrencyCard extends StatelessWidget {
     required this.amount,
     required this.icon,
     required this.isInverted,
-    this.offset = const [0, 0],
+    this.offset,
   });
 
   @override
   Widget build(BuildContext context) {
     return Transform.translate(
-      offset: Offset(offset[0], offset[1]),
+      offset: Offset(offset?[0] ?? 0, offset?[1] ?? 0),
       child: Container(
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
